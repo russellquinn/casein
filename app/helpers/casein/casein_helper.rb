@@ -194,9 +194,9 @@ module Casein
   	  casein_form_tag_wrapper("<div class='casein-datetime-select'>".html_safe + form.datetime_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')) + "</div>".html_safe, form, obj, attribute, options).html_safe
   	end
 	
-  	def casein_file_field form, obj, object_name, attribute, options = {}
+  	def casein_file_field form, obj, attribute, options = {}
   	  class_hash = merged_class_hash(options, 'form-control')
-  	  contents = "<div class='#{class_hash[:class]}'>" + file_field(object_name, attribute, strip_casein_options(options)) + '</div>'
+  	  contents = "<div class='#{class_hash[:class]}'>" + form.file_field(attribute, strip_casein_options(options)) + '</div>'
 
       if options.key? :casein_contents_preview
         contents = options[:casein_contents_preview].html_safe + contents.html_safe

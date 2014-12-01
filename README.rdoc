@@ -213,7 +213,7 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_date_select form, obj, attribute, options = {}
   casein_time_select form, obj, attribute, options = {}
   casein_datetime_select form, obj, attribute, options = {}
-  casein_file_field form, obj, object_name, attribute, options = {}
+  casein_file_field form, obj, attribute, options = {}
   casein_hidden_field form, obj, attribute, options = {}
   casein_custom_field form, obj, attribute, custom_contents, options = {}
 

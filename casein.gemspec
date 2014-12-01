@@ -93,7 +93,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<casein>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.7"])
-      s.add_runtime_dependency(%q<authlogic>, ["= 3.4.2"])
+      s.add_runtime_dependency(%q<authlogic>, ["= 3.4.3"])
       s.add_runtime_dependency(%q<scrypt>, ["= 1.2.1"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
     else

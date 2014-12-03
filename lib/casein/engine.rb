@@ -1,5 +1,6 @@
 require "casein"
 require "rails"
+require 'bootstrap-sass'
 
 module Casein
   class Engine < Rails::Engine

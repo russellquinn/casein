@@ -6,11 +6,11 @@
 
   	<title><%= casein_generate_page_title %></title>
   	<% casein_config_stylesheet_includes.each do |stylesheet| %>
-  		<%= stylesheet_link_tag(stylesheet) %>
+     	<%= stylesheet_link_tag(stylesheet) %>
   	<% end %>
-  	
+
   	<% casein_config_javascript_includes.each do |javascript| %>
-  		<%= javascript_include_tag(javascript) %>
+  	  <%= javascript_include_tag(javascript) %>
   	<% end %>
 
   	<%= csrf_meta_tag %>
@@ -27,56 +27,54 @@
   </head>
 
   <body>
-    <div class="navbar navbar-static-top">
-      <% if @session_user != nil %>
-        <div class="container">
-          <div id="user-info">
-            <ul>
-              <li class="hidden-sm">Hello <%= @session_user.name %></li>
-              <li class="hidden-sm"><%= Time.zone.name %></li>
-              <li><%= link_to 'Profile', casein_admin_user_path(@session_user) %></li>
-
-              <% if @session_user.is_admin? %>
-                <li><%= link_to 'Users', casein_admin_users_path %></li>
-              <% end %>
-
-              <%= render :partial => '/casein/layouts/top_navigation' %>
-              <li class="last-item signout"><%= link_to 'Sign out', casein_admin_user_session_path, :method => :delete %></li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to(image_tag(casein_config_logo, alt: casein_config_website_name), {controller: :casein}, class: "navbar-brand") %>
         </div>
-      <% end %>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="navbar-nav nav pull-right-sm text-center-xs">
+            <% if !@session_user.nil? %>
+            <li class="hidden-sm hidden-xs"><a href="">Hello <%= @session_user.name %></a></li>
+            <li class="hidden-sm hidden-xs"><a href=""><%= Time.zone.name %></a></li>
+            <li><%= link_to 'Profile', casein_admin_user_path(@session_user) %></li>
 
-      <div class="container">
-        <%= link_to(image_tag(casein_config_logo, :alt => casein_config_website_name), {:controller => :casein}, :class => "navbar-brand") %>   
-      </div>
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-         
-        <div class="nav-collapse collapse"> 
-          <ul class="nav navbar-nav">
-            <%= render :partial => '/casein/layouts/tab_navigation' %>
+            <% if @session_user.is_admin? %>
+            <li><%= link_to 'Users', casein_admin_users_path %></li>
+            <% end %>
+
+            <%= render partial: '/casein/layouts/top_navigation' %>
+            <li class="last-item signout">
+              <%= link_to 'Sign out', casein_admin_user_session_path, method: :delete %>
+            </li>
+            <% end %>
           </ul>
         </div>
       </div>
+    </nav>
+    <div class="container tab-nav">
+      <ul class="nav nav-pills">
+        <%= render partial: '/casein/layouts/tab_navigation' %>
+	    </ul>
     </div>
-
     <div class="container">
       <div id="content">
         <div class="row">
           <% if content_for?(:sidebar) %>
-             <div id="right-column" class="col-lg-2">
+             <div id="right-column" class="col-xs-6 col-sm-2 pull-right-sm">
                 <ul class="nav nav-pills nav-stacked content-bottom-padding">
                   <%= yield :sidebar %>
                 </ul>
             </div>
-            <div id="left-column" class="col-lg-10 content-bottom-padding">
+            <div id="left-column" class="col-xs-12 col-sm-10 content-bottom-padding">
           <% else %>
-            <div class="col-lg-12 content-bottom-padding">
+            <div class="col-xs-12 content-bottom-padding">
           <% end %>
 
             <% if flash[:warning] %>
@@ -94,14 +92,14 @@
                 <%= yield :help %>
               </div>
             <% end %>
-            
+
             <%= yield %>
-            
+
             </div>
 
         </div>
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-xs-12">
            <hr />
            <footer>
               <p><%= casein_get_footer_string(true) %></p>

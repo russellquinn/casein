@@ -1,18 +1,17 @@
 /* BOOTSTRAP OVERRIDES */
-
 .alert {
 	line-height: 22px;
 	padding: 10px 15px 10px 15px;
 }
 
-.navbar-toggle {
-	top: 54px;
-	left: 15px;
-}
-
 .navbar-brand {
-	padding-top: 10px;
-	padding-bottom: 25px;
+  margin-bottom: 10px;
+}
+.navbar-nav.nav {
+  margin-top: 10px;
+}
+.navbar-toggle {
+  margin-top: 12px;
 }
 
 .navbar-nav > li > a:hover,
@@ -41,18 +40,11 @@
 	margin: 10px 0px 0px 0px;
 }
 
+.nav-pills > li > a {
+	border: 1px solid #cdcdcd;
+}
+
 @media screen and (min-width: 768px) {
-
-	.navbar-brand {
-		padding-top: 5px;
-		padding-bottom: 5px;
-		margin-left: 1px;
-	}
-
-	.navbar-nav {
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
 
 	.navbar-nav > li > a:hover,
 	.navbar-nav > li > a:focus {
@@ -73,4 +65,17 @@
 		border-radius: 6px;
 	}
 
+}
+
+@media (max-width: $screen-sm-min) {
+  .text-center-xs {
+    float:none;
+    text-align:center;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .pull-right-sm {
+    float: right;
+  }
 }

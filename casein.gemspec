@@ -24,17 +24,9 @@ Gem::Specification.new do |s|
     "PUBLIC_VERSION.yml",
     "README.rdoc",
     "Rakefile",
-    "app/assets/fonts/casein/glyphiconshalflings-regular.eot",
-    "app/assets/fonts/casein/glyphiconshalflings-regular.otf",
-    "app/assets/fonts/casein/glyphiconshalflings-regular.svg",
-    "app/assets/fonts/casein/glyphiconshalflings-regular.ttf",
-    "app/assets/fonts/casein/glyphiconshalflings-regular.woff",
     "app/assets/images/casein/casein.png",
-    "app/assets/javascripts/casein/bootstrap.js",
     "app/assets/javascripts/casein/casein.js",
     "app/assets/javascripts/casein/html5shiv.js",
-    "app/assets/stylesheets/casein/bootstrap-glyphicons.css.scss",
-    "app/assets/stylesheets/casein/bootstrap.css",
     "app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss",
     "app/assets/stylesheets/casein/casein.css.scss",
     "app/assets/stylesheets/casein/login.css.scss",
@@ -96,12 +88,16 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<authlogic>, ["= 3.4.2"])
       s.add_runtime_dependency(%q<scrypt>, ["= 1.2.1"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<bootstrap-sass>, ['~> 3.3.1'])
+      s.add_runtime_dependency(%q<sass-rails>, ['>= 3.2'])
     else
       s.add_dependency(%q<casein>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.7"])
       s.add_dependency(%q<authlogic>, ["= 3.4.2"])
       s.add_dependency(%q<scrypt>, ["= 1.2.1"])
       s.add_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_dependency(%q<bootstrap-sass>, ['~> 3.3.1'])
+      s.add_dependency(%q<sass-rails>, ['>= 3.2'])
     end
   else
     s.add_dependency(%q<casein>, [">= 0"])
@@ -109,6 +105,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<authlogic>, ["= 3.4.2"])
     s.add_dependency(%q<scrypt>, ["= 1.2.1"])
     s.add_dependency(%q<jquery-rails>, [">= 0"])
+    s.add_dependency(%q<bootstrap-sass>, ['~> 3.3.1'])
+    s.add_dependency(%q<sass-rails>, ['>= 3.2'])
   end
 end
 

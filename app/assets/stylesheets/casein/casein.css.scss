@@ -243,6 +243,13 @@ label.control-label small {
 	margin-right: 2%
 }
 
+.casein-color {
+  padding-bottom: 11px;
+  input[type=color] {
+    width: 100%;
+  }
+}
+
 .casein-datetime-select select {
 	width: 27%;
 	display: inline-block;

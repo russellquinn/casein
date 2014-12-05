@@ -74,6 +74,8 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 <b>Casein should now be running!</b>
 
+- NOTE: You must have the 'jquery-rails' gem in the main part of your Gemfile, not in the :assets group. Otherwise Casein assets will be unable to find the jQuery library.
+
 ==Usage
 
 The default Casein install supports user authentication. Users may have a role of either ‘administrator’ or ‘user’. The former is allowed to add, edit and delete other Casein users. The latter is only allowed to edit their own profile.

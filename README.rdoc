@@ -1,6 +1,6 @@
 =Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
-** ALL-NEW CASEIN 5.0.0 — featuring new responsive UI based on Bootstrap 3! **
+** ALL-NEW CASEIN 5.0.0 — featuring new responsive UI based on Bootstrap 3.3! **
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD interface for your data.
 
@@ -189,7 +189,14 @@ The Casein Rake tasks are all namespaced with ‘casein:’
 
 Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap offers a wealth of UI components, CSS styles, and JavaScript plugins. See the Bootstrap website for full details.
 
-Note that Casein runs from the shortlived Bootstrap v3.0.0 beta and hasn't yet been updated to Bootstrap v3.1.x. Some of the Bootstrap syntax might be different if you're used to 3.1.x. (Update coming soon!)
+Casein is using Bootstrap 3.3.1 Sass distribution included via the Twitter (bootstrap-sass)[http://github.com/twbs/bootstrap-sass] gem.  If you want to use this in your main app, you can add the following lines to your +application.css.scss+ file and you'll have bootstrap at your fingertips.
+
+  @import 'bootstrap-sprockets';
+  @import 'bootstrap';
+
+You should not have to include +bootstrap-sass+ in your application's Gemfile as it'll come through via Casein.
+
+NOTE: You must be using Sass and your +application.css+ file must be called +application.css.scss+ for these to be properly imported by Sprockets.
 
 ===Changing form elements / other helpers
 

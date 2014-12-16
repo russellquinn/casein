@@ -1,10 +1,15 @@
-/*
- *= require ./bootstrap.css
- *= require ./bootstrap-glyphicons.css
- *= require ./casein-bootstrap-overrides.css
-*/
-
 /* CASEIN LAYOUT */
+
+/* from bootstrap-sass docs:
+ *
+ * Do not use //= require in Sass or your other stylesheets will not be able to
+ * access the Bootstrap mixins or variables.
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "casein-bootstrap-overrides";
 
 @media (min-width: 992px){
 
@@ -226,7 +231,7 @@ label.control-label small {
 	font-weight: normal;
 	color: #666;
 	margin-left: 5px;
-	font-size: 0.8em; 
+	font-size: 0.8em;
 }
 
 .casein-date-select select {

@@ -1,4 +1,4 @@
-<%= form_for @admin_user_session, :url => casein_admin_user_session_path do |f| %>
+<%= form_for @admin_user_session, :url => casein_admin_user_session_path, :as => :casein_admin_user_session do |f| %>
 	<% if @admin_user_session.errors.any? %>
 		<div id="error_messages" class="alert alert-danger">
 			<% @admin_user_session.errors.keys.each do |key| %>

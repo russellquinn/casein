@@ -250,6 +250,15 @@ For more information on each function, check the app/helpers/casein/casein_helpe
   :casein_button_label – available in casein_radio_button and casein_check_box. Used to give individual buttons their labels.
   :casein_truncate - may be passed into casein_table_cell_link along with a maximum length to automatically truncate strings and suffix with '...'
 
+===== Using custom form elements from external libraries
+
+You can also use custom form elements from other libraries.
+If you have to include javascripts for this element, you have to add it to app/assets/javascripts/casein/custom.js (and not to app/assets/javascripts/application.js)
+
+E.g. if you want to you use ckeditor for a RichText-field, you have to add the line
+  //= require ckeditor/init
+to app/assets/javascripts/casein/custom.js
+
 ===Changing form layout
 
 A Bootstrap responsive two-column layout is automatically created by the scaffold generator. You can manually edit this to be any Bootstrap grid configuration. See Bootstrap documentation for full details: http://getbootstrap.com/css/#grid

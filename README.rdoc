@@ -274,6 +274,21 @@ e.g.
 
   match ':controller(/:action(/:id(.:format)))', :constraints => Casein::RouteConstraint.new
 
+===Testing
+
+In order to test the Casein-forms you have to create an admin user:
+  email = "user@example.com"
+  name = "casein_user"
+  password = "please12"
+  user = Casein::AdminUser.create! email: email, login: name, name: name, password: password, password_confirmation: password, access_level: 0
+
+And log in with it.
+For example with Capybara:
+  visit new_casein_admin_user_session_path
+  fill_in("Username", with: name)
+  fill_in("Password", with: password)
+  click_button("Sign in")
+
 ===Default Timezone
 
 Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.

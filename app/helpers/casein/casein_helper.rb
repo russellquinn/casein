@@ -173,7 +173,7 @@ module Casein
     end
 
   	def casein_select form, obj, attribute, option_tags, options = {}
-  		casein_form_tag_wrapper(form.select(attribute, option_tags, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
+  		casein_form_tag_wrapper(form.select(attribute, option_tags, strip_casein_options(options), options_hash_with_merged_classes(options, 'form-control')), form, obj, attribute, options).html_safe
   	end
 
   	def casein_time_zone_select form, obj, attribute, option_tags, options = {}

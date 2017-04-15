@@ -48,7 +48,7 @@ module Casein
       line_to_add = "namespace :casein do"
       insert_sentinel = 'Application.routes.draw do'
       if File.read(file_to_update).scan(/(#{Regexp.escape("#{line_to_add}")})/mi).blank?
-        gsub_add_once plural_name, file_to_update, "\n#Casein routes\n" + line_to_add + "\nend\n", insert_sentinel
+        gsub_add_once plural_name, file_to_update, "\n" + "    " + "#Casein routes\n" + "    " + line_to_add + "\n" + "    " + "end\n", insert_sentinel
       end
     end
 
@@ -67,7 +67,7 @@ module Casein
       end
 
       insert_sentinel = 'namespace :casein do'
-      gsub_add_once plural_name, file_to_update, "    " + line_to_add, insert_sentinel
+      gsub_add_once plural_name, file_to_update, "    " * 2 + line_to_add, "    " + insert_sentinel
     end
 
     def add_to_navigation

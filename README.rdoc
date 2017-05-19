@@ -60,7 +60,7 @@ Thanks to @brchristian and @mkunkel for this release.
 
 — Run the following Rake task to set up an initial user. You should specify your email address and password (or omit the password parameter to have a random password assigned.) If you've set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
 
-  rake casein:users:create_admin email=you@yourdomain.com [password=your_password]
+  rake casein:users:create_admin email=you@yourdomain.com password=your_password
 
 (square brackets indicate an optional parameter, do not include)
 
@@ -82,7 +82,7 @@ Casein has a scaffolding generator to automatically create all the CRUD views an
 
 The command to run the scaffolding generator is:
 
-  rails g casein:scaffold ModelName [field:type, field:type]
+  rails g casein:scaffold ModelName field:type field:type
 
 (square brackets indicate an optional parameter, do not include)
 

@@ -88,7 +88,7 @@
             <% end %>
             <% if flash[:notice] %>
               <div id="notice" class="alert alert-success">
-                <%= flash[:notice] %>
+                <%= flash[:notice].html_safe %>
               </div>
             <% end %>
             <% if content_for?(:help) %>

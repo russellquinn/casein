@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.name        = 'casein'
   s.version     = Casein::VERSION
   s.authors     = ['Russell Quinn']
-  s.date        = '2019-01-17'
+  s.date        = '2020-08-02'
   s.description = 'A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap.'
   s.summary     = 'A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap.'
   s.email       = ['mail@russellquinn.com']
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     'README.rdoc'
   ]
 
-  s.add_dependency 'authlogic', '~> 5.0.2'
+  s.add_dependency 'authlogic', '~> 6.1'
   s.add_dependency 'bootstrap-sass', '~> 3.4.0'
   s.add_dependency 'jquery-rails', '>= 0'
   s.add_dependency 'sassc-rails', '>= 2.0.0'

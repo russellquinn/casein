@@ -14,6 +14,10 @@ This version of Casein is designed for Ruby on Rails 5.x and Ruby 2.3.3 or later
 
 Casein 5.1.1.5 was the last gem release compatible with Rails 4.x.
 
+==What’s New in 5.5.0
+
+* Updates minimum version of AuthLogic to 6.1 to resolve compatibility with Ruby 2.7
+
 ==What’s New in 5.4.0
 
 * Bug fix for breaking AuthLogic changes

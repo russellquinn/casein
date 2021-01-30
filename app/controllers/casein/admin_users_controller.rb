@@ -41,7 +41,7 @@ module Casein
       @casein_admin_user = Casein::AdminUser.find params[:id]
       @casein_page_title = "#{@casein_admin_user.name} > Update user"
 
-      if @casein_admin_user.update_attributes casein_admin_user_params
+      if @casein_admin_user.update casein_admin_user_params
         flash[:notice] = "#{@casein_admin_user.name} has been updated"
       else
         flash.now[:warning] = 'There were problems when trying to update this user'
@@ -63,7 +63,7 @@ module Casein
       if @casein_admin_user.valid_password? params[:form_current_password]
         if params[:casein_admin_user][:password].blank? && params[:casein_admin_user][:password_confirmation].blank?
           flash[:warning] = 'New password cannot be blank'
-        elsif @casein_admin_user.update_attributes casein_admin_user_params
+        elsif @casein_admin_user.update casein_admin_user_params
           flash[:notice] = 'Your password has been changed'
         else
           flash[:warning] = 'There were problems when trying to change your password'
@@ -85,7 +85,7 @@ module Casein
         generate_random_password if params[:generate_random_password]
         @casein_admin_user.notify_of_new_password = true unless @casein_admin_user.id == @session_user.id && params[:generate_random_password].blank?
 
-        if @casein_admin_user.update_attributes casein_admin_user_params
+        if @casein_admin_user.update casein_admin_user_params
           if @casein_admin_user.notify_of_new_password
             flash[:notice] = "Password has been reset and #{@casein_admin_user.name} has been notified by email"
           else

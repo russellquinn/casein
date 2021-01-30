@@ -38,7 +38,7 @@ module Casein
 
       @<%= singular_name %> = <%= class_name %>.find params[:id]
 
-      if @<%= singular_name %>.update_attributes <%= singular_name %>_params
+      if @<%= singular_name %>.update <%= singular_name %>_params
         flash[:notice] = '<%= singular_name.humanize.capitalize %> has been updated'
         redirect_to casein_<%= @plural_route %>_path
       else
